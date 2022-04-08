@@ -21,6 +21,9 @@ const AddExpenseForm = () => {
       type: 'Add Expense',
       payload: newExpense
     });
+    //Clear the input fields after submission
+    setName('');
+    setCost('');
   };
   return (
     <form onSubmit={onSubmit}>
