@@ -9,7 +9,7 @@ const ExpenseItem = (props) => {
       {props.name}
       <div>
         <span className='btn btn-sm btn-primary mr-3'>
-          {props.cost}
+          ${props.cost}
         </span> 
         <TiDelete size='1.5em'></TiDelete>
       </div>
