@@ -9,6 +9,7 @@ const ExpenseList = () => {
       {expenses.map((expense) => {
         console.log('expense = ', expense);
         return <ExpenseItem 
+          key={expense.id}
           id={expense.id} 
           name={expense.name} 
           cost={expense.cost} />
