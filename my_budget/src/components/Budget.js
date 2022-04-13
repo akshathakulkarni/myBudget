@@ -1,52 +1,77 @@
 import React, { useContext, useState } from "react";
 import { AppContext } from "../context/AppContext";
-import './Expense.css'
+import useVisualMode from "../hooks/useVisualMode";
+import "./Expense.css";
+
+const SHOW = "SHOW";
+const EDIT = "EDIT";
+let isButtonTriggered = false;
 
 const Budget = () => {
-
-
-
+  
   const { budget } = useContext(AppContext);
+
+  const { mode, transition } = useVisualMode(isButtonTriggered ? EDIT : SHOW);
 
   const { dispatch } = useContext(AppContext);
 
+  const [newBudget, setNewBudget] = useState(budget);
+
   const onSubmit = (event) => {
+  
     event.preventDefault();
 
-    const newBudget = {
-      budget: budget,
+    const updatedBudget = {
+      budget: newBudget,
     };
-    console.log('1111 = ', newBudget)
     //pass dispatch actions(to update) down instead of callbacks
     dispatch({
       type: "Update Budget",
-      payload: newBudget,
+      payload: updatedBudget,
     });
+    transition(SHOW);
   };
 
-  // const updateBudget = () => {
-  //   const [newBudget, setNewBudget] = useState(budget);
-  //   return (
-  //     <div className="alert alert-secondary" id='budget'>
-  //     <span>
-  //       <input 
-        
-  //       required="required"
-  //       type="number"
-  //       className="form-control"
-  //       id="budget"
-  //       value={newBudget}
-  //       onChange={(event) => setNewBudget(event.target.value)}
-  //     /></span>
-  //     <button className="btn btn-sm btn-info" id='update-button' onSubmit={onSubmit}>Save</button>
-  //   </div>
-  //   )
-  // }
+  const updateBudget = () => {
+    isButtonTriggered = true;
+    transition(EDIT);
+  };
+
   return (
-    <div className="alert alert-secondary" id='budget'>
-      <span>Budget: ${budget}</span>
-      <button className="btn btn-sm btn-info" id='update-button'>Update</button>
-    </div>
+    <>
+      {mode === SHOW && (
+        <div className="alert alert-secondary" id="budget">
+          <span>Budget: ${newBudget}</span>
+          <button
+            className="btn btn-sm btn-info"
+            id="update-button"
+            onClick={updateBudget}
+          >
+            Update
+          </button>
+        </div>
+      )}
+      {mode === EDIT && (
+        <div className="alert alert-secondary" id="budget">
+          <span>Budget: $<input 
+            required="required"
+            type="number"
+            id="value"
+            value={newBudget}
+            onChange={(event) => setNewBudget(event.target.value)}
+
+          /></span>
+          <button
+            type='submit'
+            className="btn btn-sm btn-info"
+            id="update-button"
+            onClick={onSubmit}
+          >
+            Save
+          </button>
+        </div>
+      )}
+    </>
   );
 };
 
