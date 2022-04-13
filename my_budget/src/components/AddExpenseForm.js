@@ -40,7 +40,7 @@ const AddExpenseForm = () => {
           />
         </div>
       </div>
-      <div classname="col-sm">
+      <div className="col-sm">
         <div className="alert alert-primary">
           <label for="cost">Cost</label>
           <input
