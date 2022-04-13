@@ -7,7 +7,6 @@ const ExpenseList = () => {
   return (
     <ul className='list-group'>
       {expenses.map((expense) => {
-        console.log('expense = ', expense);
         return <ExpenseItem 
           key={expense.id}
           id={expense.id} 
