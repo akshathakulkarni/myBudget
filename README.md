@@ -9,10 +9,10 @@ Made from [this](https://www.youtube.com/watch?v=aeYxBd1it7I) tutorial by [Chris
 Features: 
 
 A user can : 
-1. Set a budget
+1. Update a budget
 2. Add new expenses
 3. Delete expenses
-4. Monitor both the total amount spent of all expenses and remainig budget. 
+4. Monitor both the total amount spent on all expenses and remaining budget. 
 
 Available script :
 Inside the project directory run `npm start` and visit 'http://localhost:3000' to view the app in a browser.
