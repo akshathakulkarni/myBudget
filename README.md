@@ -4,7 +4,7 @@ myBudget is a simple React based single-page budget app to track and monitor exp
 
 Made from [this](https://www.youtube.com/watch?v=aeYxBd1it7I) tutorial by [Chris Blakely](https://www.youtube.com/channel/UC-Zcse8tC53G34Uo4kzLeAg). 
 
-(https://github.com/akshathakulkarni/React_budget_app/blob/main/docs/myBudget.png?raw=true)
+!['myBudget'](https://github.com/akshathakulkarni/React_budget_app/blob/main/docs/myBudget.png?raw=true)
 
 Features: 
 
