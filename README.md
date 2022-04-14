@@ -6,7 +6,7 @@ Made from [this](https://www.youtube.com/watch?v=aeYxBd1it7I) tutorial by [Chris
 
 !['myBudget'](https://github.com/akshathakulkarni/React_budget_app/blob/main/docs/myBudget.png?raw=true)
 
-#Features
+# Features
 
 A user can : 
 1. Update a budget
@@ -14,6 +14,6 @@ A user can :
 3. Delete expenses
 4. Monitor both the total amount spent on all expenses and remaining budget. 
 
-#Available script
+# Available script
 
 Inside the project directory run `npm start` and visit 'http://localhost:3000' to view the app in a browser.
