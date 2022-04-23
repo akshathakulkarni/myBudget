@@ -1,6 +1,7 @@
 # myBudget
 
 myBudget is a simple React based single-page budget app to track and monitor expenses. 
+Used Context-API to effectively produce global variables for sharing data among components. 
 
 Made from [this](https://www.youtube.com/watch?v=aeYxBd1it7I) tutorial by [Chris Blakely](https://www.youtube.com/channel/UC-Zcse8tC53G34Uo4kzLeAg). 
 
